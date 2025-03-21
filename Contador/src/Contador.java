@@ -13,28 +13,24 @@ public class Contador {
         }
     } catch(Exception e){
         System.out.println("Digite um número inteiro");
-    }
+    }	
+	try {
+		contar(parametroUm, parametroDois);
 		
-		try {
-			//chamando o método contendo a lógica de contagem
-			contar(parametroUm, parametroDois);
-		
-		}catch (ParametrosInvalidosException exception) {
-			System.out.println(exception.getMessage());
-		}
-		
+	}catch (ParametrosInvalidosException exception) {
+		System.out.println(exception.getMessage());
 	}
-	static void contar (int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
-		//validar se parametroUm é MAIOR que parametroDois e lançar a exceção
 		
-		int contagem = parametroDois - parametroUm;
-        if(parametroUm>parametroDois){
+}
+static void contar (int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
+	int contagem = parametroDois - parametroUm;
+        
+	if(parametroUm>parametroDois){
             throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
         } else{
             for(int i=1; i<=contagem; i++){
                 System.out.println(i);
             }
         }
-		    //realizar o for para imprimir os números com base na variável contagem
 	}
 }
